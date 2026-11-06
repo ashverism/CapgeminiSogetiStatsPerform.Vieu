@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capgemini + Stats Perform GTM Strategy Brief · Vieu · November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1A1818;
+    --ink-mid:   #3D3A3A;
+    --ink-soft:  #7A7575;
+    --rule:      #E2DFDC;
+    --paper:     #F8F6F3;
+    --white:     #FFFFFF;
+    --accent:    #7744FF;
+    --accent-lt: #EDE8FF;
+    --gold:      #B8892A;
+    --gold-lt:   #FDF5E4;
+    --red:       #C0392B;
+    --green:     #1D7A4A;
+    --green-lt:  #E6F4EC;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+    --max:   860px;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  .page { max-width: var(--max); margin: 0 auto; padding: 0 40px 80px; }
+
+  /* Nav */
+  .topnav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--rule); padding: 12px 40px; display: flex; gap: 24px; flex-wrap: wrap; max-width: 100%; }
+  .topnav a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; }
+  .topnav a:first-child, .topnav a:hover { color: var(--accent); }
+
+  /* Cover */
+  .cover { padding: 72px 0 40px; border-bottom: 1px solid var(--ink); margin-bottom: 40px; }
+  .cover-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .cover-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--accent); }
+  .cover-title { font-family: var(--serif); font-size: clamp(40px, 5.6vw, 60px); line-height: 1.07; color: var(--ink); margin-bottom: 10px; }
+  .cover-title em { font-style: italic; color: var(--accent); }
+  .cover-sub { font-size: 17px; color: var(--ink-mid); font-weight: 300; margin-bottom: 36px; max-width: 600px; }
+  .cover-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .cover-meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .cover-meta-value { font-size: 13px; font-weight: 500; color: var(--ink); }
+
+  /* Sections */
+  .section { margin-bottom: 64px; scroll-margin-top: 56px; }
+  .section + .section { padding-top: 48px; border-top: 1px solid var(--rule); }
+  .section-kicker { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .section-title { font-family: var(--serif); font-size: 28px; line-height: 1.18; color: var(--ink); margin-bottom: 20px; }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-intro { font-size: 15px; color: var(--ink-mid); line-height: 1.7; max-width: 680px; margin-bottom: 28px; }
+
+  /* Stat strip */
+  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; margin-bottom: 40px; }
+  .stat-cell { background: var(--white); padding: 24px 22px; }
+  .stat-num { font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--accent); margin-bottom: 6px; }
+  .stat-label { font-size: 12px; font-weight: 500; color: var(--ink-soft); line-height: 1.4; }
+
+  /* Pull quote */
+  .pull-quote { border-left: 3px solid var(--accent); padding: 16px 24px; background: var(--accent-lt); border-radius: 0 6px 6px 0; margin: 28px 0; }
+  .pull-quote p { font-family: var(--serif); font-size: 18px; line-height: 1.5; color: var(--ink); font-style: italic; }
+  .pull-quote cite { display: block; margin-top: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-style: normal; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 20px; }
+  .card-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; margin-bottom: 10px; color: var(--ink); }
+  .card-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+  .card.accent-top { border-top: 3px solid var(--accent); }
+
+  /* Two-col */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  /* Tags */
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tag { font-size: 11.5px; font-weight: 500; padding: 4px 12px; border-radius: 20px; background: var(--white); border: 1px solid var(--rule); color: var(--ink-mid); }
+  .tag.tier1 { background: var(--accent); color: var(--white); border-color: var(--accent); font-weight: 600; }
+  .tag.tier2 { background: var(--accent-lt); color: var(--accent); border-color: var(--accent); }
+  .tag.anti { border-color: var(--red); color: var(--red); }
+  .tag.ask { border-style: dashed; border-color: var(--gold); color: var(--gold); background: var(--gold-lt); }
+
+  /* Segment */
+  .sub-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin: 18px 0 4px; }
+  .segment { background: var(--white); border: 1px solid var(--rule); border-top: 3px solid var(--accent); border-radius: 8px; padding: 22px 24px; margin-bottom: 16px; }
+  .segment-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .segment-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-lt); padding: 3px 10px; border-radius: 20px; }
+  .segment-title { font-family: var(--serif); font-size: 19px; color: var(--ink); }
+  .fast-lane { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; background: var(--accent-lt); border-radius: 6px; padding: 12px 16px; margin: 16px 0 4px; font-size: 13px; color: var(--ink-mid); }
+  .fast-lane b { color: var(--accent); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+  /* Tables */
+  .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 6px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  .data-table th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--ink); padding: 10px 14px; border: none; }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-mid); line-height: 1.55; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--white); }
+  .data-table tr:nth-child(odd) td { background: var(--paper); }
+  .data-table td strong { color: var(--ink); font-weight: 600; }
+  .pend { color: var(--gold); font-weight: 600; }
+
+  /* Program banner */
+  .program-banner { background: var(--ink); border-radius: 10px; padding: 28px 32px; margin-bottom: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .pb-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .pb-title { font-family: var(--serif); font-size: 18px; color: #fff; line-height: 1.25; margin-bottom: 6px; }
+  .pb-body { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  /* Deliverable rows */
+  .del-row { display:grid; grid-template-columns:160px 1fr; border:1px solid var(--rule); border-top:none; overflow:hidden; }
+  .del-row.first { border-top:1px solid var(--rule); border-radius:8px 8px 0 0; }
+  .del-row.last { border-radius:0 0 8px 8px; }
+  .del-row .dk { background:var(--accent); padding:20px 18px; display:flex; flex-direction:column; justify-content:center; }
+  .del-row .dk .lab { font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:6px; }
+  .del-row .dk .val { font-family:var(--serif); font-size:17px; color:#fff; line-height:1.2; }
+  .del-row .dk .when { font-size:11px; color:rgba(255,255,255,0.65); margin-top:8px; font-weight:600; }
+  .del-row .db { background:var(--white); padding:20px 22px; }
+  .del-row .db .h { font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+  .del-row .db .p { font-size:13px; color:var(--ink-mid); line-height:1.65; }
+
+  /* Offer box */
+  .offer-box { background: var(--white); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 22px 24px; margin-bottom: 28px; }
+  .offer-label { font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+  .check-list { list-style:none; font-size:13px; color:var(--ink-mid); line-height:1.7; }
+  .check-list li { margin-bottom:6px; padding-left:18px; position:relative; }
+  .check-list li::before { content:'\2713'; position:absolute; left:0; color:var(--green); }
+  .mini-head { font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px; }
+
+  /* Agent chips */
+  .agents { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin: 18px 0; }
+  .agent { background: var(--paper); border:1px solid var(--rule); border-radius:6px; padding:12px 12px; }
+  .agent b { display:block; font-size:12.5px; color:var(--ink); margin-bottom:2px; }
+  .agent span { font-size:11.5px; color:var(--ink-mid); line-height:1.45; display:block; }
+
+  /* Outcome strip */
+  .outcome-strip { display:grid; grid-template-columns: repeat(4, 1fr); gap:1px; background: rgba(255,255,255,0.1); border-radius:8px; overflow:hidden; margin-top: 18px; }
+  .outcome { background: var(--ink); padding: 16px 14px; }
+  .outcome .n { font-family: var(--serif); font-size: 22px; color: #B9A2FF; line-height:1.1; }
+  .outcome .l { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 4px; line-height:1.35; }
+
+  /* Footer */
+  .doc-footer { padding-top: 36px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-top: 64px; }
+  .footer-left { font-size: 12px; color: var(--ink-soft); line-height: 1.6; }
+  .footer-vieu { font-size: 22px; font-family: var(--serif); color: var(--ink-soft); }
+
+  .note { font-size: 11px; color: var(--ink-soft); line-height: 1.5; margin-top: 10px; }
+  .note a { color: var(--ink-soft); }
+  .steps { display:flex; flex-direction:column; gap:8px; }
+  .step { display:flex; gap:12px; align-items:flex-start; }
+  .step-n { flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .step-t { font-size:13px; color:var(--ink-mid); line-height:1.55; overflow-wrap:anywhere; }
+
+  .links-box { display:flex; flex-direction:column; border:1px solid var(--rule); border-radius:8px; overflow:hidden; }
+  .link-row { display:grid; grid-template-columns:200px 1fr auto; align-items:center; padding:16px 20px; background:var(--white); border-bottom:1px solid var(--rule); gap:16px; }
+  .link-row.tall { grid-template-columns:200px 1fr; align-items:start; padding:20px; background:var(--paper); border-bottom:none; }
+  .link-name { font-size:13px; font-weight:600; color:var(--ink); }
+  .link-desc { font-size:13px; color:var(--ink-soft); }
+  .btn-outline { font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); border:1.5px solid var(--accent); border-radius:4px; padding:6px 14px; text-decoration:none; white-space:nowrap; }
+  .btn-solid { display:inline-block; margin-top:16px; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#fff; background:var(--accent); border-radius:4px; padding:9px 18px; text-decoration:none; }
+
+  @media print {
+    body { background: white; } .page { padding: 0 0 48px; } .cover { padding: 48px 0 32px; }
+    .topnav { display: none; }
+  }
+  @media (max-width: 640px) {
+    .page { padding: 0 16px 60px; }
+    .topnav { padding: 10px 16px; gap: 14px; }
+    .cards, .two-col, .program-banner { grid-template-columns: 1fr; }
+    .stat-strip { grid-template-columns: 1fr; }
+    .cover { padding: 48px 0 32px; }
+    .cover-title { font-size: 34px; }
+    .del-row, .del-row.first, .del-row.last { grid-template-columns: 1fr; }
+    .agents { grid-template-columns: 1fr 1fr; }
+    .outcome-strip { grid-template-columns: 1fr 1fr !important; }
+    .link-row, .link-row.tall { grid-template-columns: 1fr; gap: 10px; }
+    .segment { padding: 18px 16px; }
+  }
+
+  /* GTM Engagement System */
+  .ees { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 32px 32px 28px; background-image: linear-gradient(180deg, #FBFAFF 0%, #FFFFFF 60%); }
+  .ees-label { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .ees-title { font-family: var(--serif); font-size: 26px; line-height: 1.2; color: var(--ink); margin-bottom: 24px; font-weight: 400; }
+  .ees-title em { font-style: normal; color: var(--accent); }
+  .ees-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 24px; align-items: start; position: relative; }
+  .ees-left { position: relative; display: flex; flex-direction: column; gap: 14px; }
+  .ees-left::after { content: ''; position: absolute; top: 50%; right: -24px; width: 24px; border-top: 2px dotted #B9A6FF; }
+  .ees-card, .ees-panel { background: #fff; border: 1px solid #E2DAFF; border-radius: 12px; }
+  .ees-card { padding: 18px 18px 20px; }
+  .ees-thumb { background: linear-gradient(135deg, #EDE8FF, #D9CFFF); border-radius: 8px; overflow: hidden; }
+  .ees-thumb-graph { height: 112px; margin-bottom: 14px; }
+  .ees-step-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .ees-step-title span, .ees-agent-title span { color: var(--accent); margin-right: 4px; }
+  .ees-step-text { font-size: 13px; color: var(--ink-mid); line-height: 1.6; }
+  .ees-right { display: flex; flex-direction: column; gap: 14px; }
+  .ees-panel { padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #FBFAFF; }
+  .ees-panel-title { font-size: 12px; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+  .ees-agent { background: #fff; border: 1px solid #E2DAFF; border-radius: 10px; padding: 10px 12px 12px; display: grid; grid-template-columns: 150px 1fr; column-gap: 14px; row-gap: 2px; align-items: center; }
+  .ees-agent .ees-thumb { grid-row: 1 / span 2; height: 56px; }
+  .ees-included { border: 2px solid var(--accent); background: var(--accent-lt); box-shadow: 0 6px 20px rgba(119,68,255,0.18); grid-template-columns: 150px 1fr; }
+  .ees-included .ees-badge { grid-row: 1; grid-column: 1 / -1; justify-self: start; margin-bottom: 8px; }
+  .ees-included .ees-thumb { grid-row: 2 / span 2; }
+  .ees-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; line-height: 1.5; }
+  .ees-badge-in { background: var(--accent); color: #fff; }
+  .ees-badge-out { background: #F1EFEC; color: var(--ink-soft); border: 1px dashed #BDB8B3; }
+  .ees-panel-head { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ees-out { border-style: dashed; border-color: #CFC9C3; background: #FAF9F7; }
+  .ees-out .ees-agent { border-style: dashed; border-color: #D9D4CE; background: #fff; }
+  .ees-out .ees-agent > *:not(.ees-thumb) { opacity: .78; }
+  .ees-out .ees-thumb { opacity: .55; filter: grayscale(.6); }
+  .ees-agent-title { font-size: 14px; font-weight: 700; color: var(--ink); align-self: end; }
+  .ees-agent-text { font-size: 12.5px; color: var(--ink-mid); line-height: 1.5; align-self: start; }
+  @media (max-width: 640px) {
+    .ees { padding: 22px 18px; }
+    .ees-grid { grid-template-columns: 1fr; }
+    .ees-left::after { display: none; }
+    .ees-agent { grid-template-columns: 1fr; }
+    .ees-agent .ees-thumb { grid-row: auto; height: 64px; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="Sections">
+  <a href="#s01">Welcome</a>
+  <a href="#s05">Who You Sell To</a>
+  <a href="#s03">Business Context</a>
+  <a href="#s07">Getting Started</a>
+</nav>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">GTM Strategy Brief</div>
+    <h1 class="cover-title">Capgemini + Stats Perform<br><em>Go-to-Market</em><br>Strategy</h1>
+    <p class="cover-sub">A go-to-market intelligence brief powered by Vieu.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><span class="cover-meta-label">Prepared by</span><span class="cover-meta-value">Vieu</span></div>
+      <div class="cover-meta-item"><span class="cover-meta-label">Prepared for</span><span class="cover-meta-value">Capgemini · Sogeti · Stats Perform</span></div>
+      <div class="cover-meta-item"><span class="cover-meta-label">Version</span><span class="cover-meta-value">November 2026</span></div>
+    </div>
+  </div>
+
+  <!-- 01 WELCOME -->
+  <div class="section" id="s01">
+    <h2 class="section-title">Welcome to your<br><em>AWS BOX Milestone Benefit</em></h2>
+    <p class="section-intro">Vieu is your go-to-market partner for TryZone IQ. Capgemini built it with Stats Perform and AWS, and it has already run live at a Rugby World Cup, so the work starts from proof, not a pitch. Vieu finds the right buyers and a warm way in to each of them. Your teams run the conversations.</p>
+
+    <div class="program-banner">
+      <div>
+        <div class="pb-label">The Program</div>
+        <div class="pb-title">Vieu GTM engagement</div>
+        <div class="pb-body">White-glove engagement for TryZone IQ. Capgemini leads, Sogeti sells, and Stats Perform brings the data, with AWS as the cloud foundation.</div>
+      </div>
+      <div>
+        <div class="pb-label">The Accounts</div>
+        <div class="pb-title">Organisations with live data and audiences to grow</div>
+        <div class="pb-body">1,000+ employees and $100M+ revenue, English-language campaigns. Sport, media and live events first. Cross-industry is an expansion hypothesis.</div>
+      </div>
+      <div>
+        <div class="pb-label">The Goal</div>
+        <div class="pb-title">Meetings with fan-engagement, content and data leaders</div>
+        <div class="pb-body">Each conversation opens with the World Cup results and a first use case on the buyer's own data. Targets and timeline to be set together.</div>
+      </div>
+    </div>
+
+    <p class="sub-label" style="margin-bottom:12px;">What You Get</p>
+    <div style="margin-bottom:36px;">
+      <div class="del-row first">
+        <div class="dk"><div class="lab">Deliverable 01</div><div class="val">Market Monitoring</div><div class="when">Ongoing</div></div>
+        <div class="db"><div class="h">Organisations that fit your ICP, tracked from a firmographics standpoint</div><div class="p">Continuous monitoring of sports bodies, broadcasters, media and live-event organisations that fit your ICP, so new and changing target accounts surface as they match.</div></div>
+      </div>
+      <div class="del-row">
+        <div class="dk"><div class="lab">Deliverable 02</div><div class="val">Account Plans</div><div class="when">100 curated account plans</div></div>
+        <div class="db"><div class="h">Full account plans with strategic priorities</div><div class="p">A complete plan for each priority account: corporate sentiment, technographics, opportunities, stakeholders, connections and org chart.</div></div>
+      </div>
+      <div class="del-row">
+        <div class="dk"><div class="lab">Deliverable 03</div><div class="val">People Bank</div><div class="when">1,000 people across ~100 accounts</div></div>
+        <div class="db"><div class="h">Buying committees and influencers, ranked by fit</div><div class="p">All relevant stakeholders per account, enriched with context on their priorities and org chart. They cover fan-engagement and digital leaders, content and broadcast owners, data and analytics leads, commercial sponsors and influencers. Each person comes with the case for why they fit.</div></div>
+      </div>
+      <div class="del-row last">
+        <div class="dk"><div class="lab">Deliverable 04</div><div class="val">Leads</div><div class="when">Ready to engage</div></div>
+        <div class="db"><div class="h">The best opportunities and people for you to engage</div><div class="p">From the accounts and the People Bank, we find the best opportunities and the best people for you to engage, including the best way to reach them, such as warm paths, events and sequenced outreach.</div></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:-24px; margin-bottom:36px;">Vieu supplies the intelligence, and your teams own outreach and qualification. You told AWS that only a few people can follow up on leads as they come in, so we release leads in small cohorts sized to your team. We will also share account lists both ways with your Informa TechTarget campaign so no buyer hears from you twice.</p>
+
+    <div class="ees" style="margin-top:36px;">
+      <div class="ees-label">Vieu · GTM Engagement System</div>
+      <h3 class="ees-title">Vieu has already built the <em>GTM Engagement System</em> for Capgemini + Stats Perform</h3>
+
+      <div class="ees-grid">
+        <div class="ees-left">
+          <div class="ees-card ees-step">
+            <div class="ees-thumb ees-thumb-graph" aria-hidden="true">
+              <svg viewBox="0 0 220 110" width="100%" height="100%">
+                <rect x="12" y="10" width="196" height="90" rx="8" fill="#fff" stroke="#D9CFFF"/>
+                <rect x="24" y="22" width="60" height="8" rx="4" fill="#7744FF" opacity=".7"/>
+                <rect x="92" y="22" width="34" height="8" rx="4" fill="#E2DAFF"/><rect x="132" y="22" width="34" height="8" rx="4" fill="#E2DAFF"/>
+                <circle cx="34" cy="48" r="5" fill="#CFC0FF"/><rect x="46" y="45" width="90" height="6" rx="3" fill="#E2DAFF"/><rect x="150" y="45" width="46" height="6" rx="3" fill="#B9A6FF"/>
+                <circle cx="34" cy="66" r="5" fill="#CFC0FF"/><rect x="46" y="63" width="70" height="6" rx="3" fill="#E2DAFF"/><rect x="150" y="63" width="34" height="6" rx="3" fill="#B9A6FF"/>
+                <circle cx="34" cy="84" r="5" fill="#7744FF"/><rect x="46" y="81" width="100" height="6" rx="3" fill="#E2DAFF"/><rect x="150" y="81" width="40" height="6" rx="3" fill="#7744FF" opacity=".7"/>
+              </svg>
+            </div>
+            <div class="ees-step-title"><span>1.</span> Market Monitoring</div>
+            <p class="ees-step-text">Track the organisations that fit your ICP by firmographics, so new and changing target accounts surface.</p>
+          </div>
+          <div class="ees-card ees-step">
+            <div class="ees-thumb ees-thumb-graph" aria-hidden="true">
+              <svg viewBox="0 0 220 110" width="100%" height="100%">
+                <rect x="10" y="10" width="130" height="90" rx="8" fill="#fff" stroke="#D9CFFF"/>
+                <line x1="75" y1="55" x2="38" y2="30" stroke="#B9A6FF"/><line x1="75" y1="55" x2="112" y2="30" stroke="#B9A6FF"/>
+                <line x1="75" y1="55" x2="38" y2="80" stroke="#B9A6FF"/><line x1="75" y1="55" x2="112" y2="80" stroke="#B9A6FF"/>
+                <circle cx="75" cy="55" r="12" fill="#7744FF"/>
+                <circle cx="38" cy="30" r="8" fill="#CFC0FF"/><circle cx="112" cy="30" r="8" fill="#CFC0FF"/>
+                <circle cx="38" cy="80" r="8" fill="#CFC0FF"/><circle cx="112" cy="80" r="8" fill="#CFC0FF"/>
+                <rect x="150" y="22" width="60" height="66" rx="6" fill="#fff" stroke="#D9CFFF"/>
+                <rect x="158" y="32" width="36" height="5" rx="2" fill="#E2DAFF"/><rect x="158" y="44" width="44" height="5" rx="2" fill="#E2DAFF"/>
+                <rect x="158" y="56" width="30" height="5" rx="2" fill="#E2DAFF"/><rect x="158" y="68" width="40" height="5" rx="2" fill="#7744FF" opacity=".6"/>
+              </svg>
+            </div>
+            <div class="ees-step-title"><span>2.</span> People Bank</div>
+            <p class="ees-step-text">Map all relevant stakeholders across strategic accounts, enriched with their priorities and org chart.</p>
+          </div>
+        </div>
+
+        <div class="ees-right">
+          <div class="ees-agent ees-included">
+            <div class="ees-badge ees-badge-in">&#10003; Included in this offering</div>
+            <div class="ees-thumb" aria-hidden="true">
+              <svg viewBox="0 0 260 64" width="100%" height="100%">
+                <rect x="12" y="8" width="236" height="48" rx="8" fill="#fff" stroke="#7744FF"/>
+                <rect x="24" y="18" width="28" height="28" rx="6" fill="#7744FF" opacity=".75"/>
+                <rect x="62" y="20" width="70" height="5" rx="2" fill="#7744FF" opacity=".7"/><rect x="62" y="32" width="100" height="4" rx="2" fill="#E2DAFF"/><rect x="62" y="41" width="74" height="4" rx="2" fill="#E2DAFF"/>
+                <rect x="196" y="20" width="40" height="24" rx="6" fill="#EDE8FF" stroke="#B9A6FF"/>
+              </svg>
+            </div>
+            <div class="ees-agent-title"><span>3.</span> Account Planning Agent</div>
+            <p class="ees-agent-text">Turns stakeholder intelligence into an account plan with a clear next move.</p>
+          </div>
+
+          <div class="ees-panel ees-out">
+            <div class="ees-panel-head">
+              <div class="ees-panel-title">Agents to Engage Key Stakeholders</div>
+              <div class="ees-badge ees-badge-out">Out of scope &middot; available add-ons in AWS Marketplace</div>
+            </div>
+
+            <div class="ees-agent">
+              <div class="ees-thumb" aria-hidden="true">
+                <svg viewBox="0 0 260 64" width="100%" height="100%">
+                  <circle cx="44" cy="32" r="20" fill="none" stroke="#E2DAFF" stroke-width="8"/>
+                  <circle cx="44" cy="32" r="20" fill="none" stroke="#7744FF" stroke-width="8" stroke-dasharray="95 126" transform="rotate(-90 44 32)"/>
+                  <rect x="86" y="14" width="150" height="6" rx="3" fill="#CFC0FF"/><rect x="86" y="28" width="112" height="6" rx="3" fill="#B9A6FF"/><rect x="86" y="42" width="130" height="6" rx="3" fill="#E2DAFF"/>
+                </svg>
+              </div>
+              <div class="ees-agent-title"><span>4.1</span> Executive Health Agent</div>
+              <p class="ees-agent-text">Baselines executive relationship health and coverage across strategic accounts.</p>
+            </div>
+
+            <div class="ees-agent">
+              <div class="ees-thumb" aria-hidden="true">
+                <svg viewBox="0 0 260 64" width="100%" height="100%">
+                  <rect x="12" y="8" width="150" height="48" rx="8" fill="#fff" stroke="#D9CFFF"/>
+                  <rect x="22" y="16" width="40" height="5" rx="2" fill="#7744FF" opacity=".7"/>
+                  <rect x="22" y="28" width="90" height="5" rx="2" fill="#E2DAFF"/><rect x="22" y="40" width="64" height="5" rx="2" fill="#E2DAFF"/>
+                  <rect x="176" y="8" width="72" height="48" rx="8" fill="#fff" stroke="#D9CFFF"/>
+                  <circle cx="194" cy="26" r="7" fill="#CFC0FF"/><rect x="206" y="22" width="34" height="4" rx="2" fill="#CFC0FF"/><rect x="206" y="31" width="24" height="3" rx="1.5" fill="#E2DAFF"/>
+                </svg>
+              </div>
+              <div class="ees-agent-title"><span>4.2</span> Event Agent</div>
+              <p class="ees-agent-text">Surfaces upcoming events and which target executives will be there.</p>
+            </div>
+
+            <div class="ees-agent">
+              <div class="ees-thumb" aria-hidden="true">
+                <svg viewBox="0 0 260 64" width="100%" height="100%">
+                  <circle cx="30" cy="32" r="12" fill="#CFC0FF"/><rect x="48" y="26" width="46" height="5" rx="2" fill="#CFC0FF"/><rect x="48" y="36" width="30" height="4" rx="2" fill="#E2DAFF"/>
+                  <rect x="120" y="6" width="130" height="52" rx="8" fill="#fff" stroke="#D9CFFF"/>
+                  <rect x="130" y="14" width="44" height="5" rx="2" fill="#7744FF" opacity=".7"/>
+                  <rect x="132" y="26" width="26" height="26" rx="5" fill="#E2DAFF"/><rect x="166" y="26" width="26" height="26" rx="5" fill="#EFEAFF"/><rect x="200" y="26" width="26" height="26" rx="5" fill="#E2DAFF"/>
+                </svg>
+              </div>
+              <div class="ees-agent-title"><span>4.3</span> Nurture Agent</div>
+              <p class="ees-agent-text">Keeps key relationships warm with thoughtful, personalized touchpoints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 WHO YOU SELL TO -->
+  <div class="section" id="s05">
+    <h2 class="section-title">Who You Sell To</h2>
+    <p class="section-intro">One core segment where TryZone IQ is already proven, with a cross-industry segment to test. The personas and signals draw on published TryZone IQ material from Capgemini and Stats Perform and on your brief to AWS. Suggested tiers, signals and qualification rules are Vieu's recommendations, not published targeting criteria from either company. Please keep, remove or add.</p>
+
+    <div class="segment">
+      <div class="segment-head">
+        <span class="segment-kicker">Target Segment</span>
+        <span class="segment-title">Sports, media &amp; live-event organisations with live data and audiences to grow</span>
+      </div>
+      <div class="card-body">Federations, leagues, competitions, broadcasters and media groups that sit on live match data but can only show fans a small part of it. New audiences need context in the moment, and editorial teams cannot write it fast enough. TryZone IQ drafts short insights from live data within the match and keeps analysts in control of what goes out. Lead with the audience problem and the World Cup results, not a generic AI pitch. Campaigns run in English through year-end, and target countries are still to confirm.</div>
+
+      <div class="sub-label">Target industries</div>
+      <div class="tag-group">
+        <span class="tag tier2">Sports federations, leagues &amp; competitions · core</span>
+        <span class="tag tier2">Broadcasters &amp; streamers · core</span>
+        <span class="tag">Sports &amp; digital media</span>
+        <span class="tag">Clubs &amp; teams</span>
+        <span class="tag">Live events &amp; venues</span>
+        <span class="tag ask">Sponsor brands · to confirm</span>
+        <span class="tag ask">Cross-industry live-data enterprises · expansion hypothesis</span>
+      </div>
+
+      <div class="fast-lane"><b>Fastest way in</b> A fan-engagement, digital or content leader at a federation, league or broadcaster with a season or competition coming up, reached through an existing Stats Perform or Capgemini relationship.</div>
+
+      <div class="sub-label">Two ways in</div>
+      <div class="two-col" style="margin-top:12px;">
+        <div>
+          <div class="card-eyebrow">Entry 01 · Audience-led · proven</div>
+          <div style="font-family:var(--serif); font-size:16px; color:var(--ink); line-height:1.25; margin-bottom:8px;">Fans can't see the story in the data</div>
+          <div class="card-body">Matches generate thousands of data points, but only a fraction reaches the viewer, and new fans need help to follow the game. The pitch: AI-drafted insights that analysts approve, on broadcast graphics, the match centre and social, during the match.</div>
+          <div class="sub-label">Champions · start here</div>
+          <div class="tag-group">
+            <span class="tag tier1">Head of Fan Engagement</span>
+            <span class="tag tier1">Head of Digital / Digital Product</span>
+            <span class="tag tier1">Director of Content / Editorial</span>
+            <span class="tag tier1">Head of Broadcast / Production</span>
+          </div>
+          <div class="sub-label">Sponsors · not the first call</div>
+          <div class="tag-group">
+            <span class="tag tier2">Chief Digital Officer</span>
+            <span class="tag tier2">Chief Commercial Officer</span>
+            <span class="tag tier2">Chief Marketing Officer</span>
+          </div>
+        </div>
+        <div>
+          <div class="card-eyebrow">Entry 02 · Data-led · cross-industry hypothesis</div>
+          <div style="font-family:var(--serif); font-size:16px; color:var(--ink); line-height:1.25; margin-bottom:8px;">Live data that people can't read fast enough</div>
+          <div class="card-body">Organisations outside sport with streaming or high-frequency data, where experts need short, human-reviewed summaries in the moment. Public TryZone IQ deployments are all in sport, so this is a Vieu hypothesis to test with you before we scale it.</div>
+          <div class="sub-label">Champions · start here</div>
+          <div class="tag-group">
+            <span class="tag tier1">Head of Data &amp; Analytics</span>
+            <span class="tag tier1">Head of AI / GenAI</span>
+            <span class="tag tier1">Head of Product</span>
+            <span class="tag tier1">Head of Innovation</span>
+          </div>
+          <div class="sub-label">Sponsors · not the first call</div>
+          <div class="tag-group">
+            <span class="tag tier2">CTO</span>
+            <span class="tag tier2">Chief Data / Data &amp; AI Officer</span>
+            <span class="tag tier2">Chief Innovation Officer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-label" style="margin-top:22px;">The four buying roles · to validate</div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Role group</th><th>Role in the deal</th><th>Titles to focus on</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Fan-engagement, digital and content leaders</strong></td><td>Champion. Owns the fan experience on the app, match centre and social</td><td>Head of Fan Engagement · Head of Digital · Director of Content</td></tr>
+            <tr><td><strong>Broadcast and production</strong></td><td>Owner of on-screen graphics and the commentary workflow (inferred)</td><td>Head of Broadcast · Head of Production · Graphics Lead</td></tr>
+            <tr><td><strong>Data, analytics and editorial</strong></td><td>Technical evaluator. Checks the data feed, editorial controls and accuracy (inferred)</td><td>Head of Data &amp; Analytics · Data Editor · Head of Innovation</td></tr>
+            <tr><td><strong>Commercial and executive sponsors</strong></td><td>Potential budget approver. Validate data rights, brand safety and partner fit</td><td>CDO · CCO · CMO · CTO</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Suggested outreach order: the fan-engagement or content owner first to confirm the audience problem, then broadcast and data leads to check the workflow and data feed, then the commercial or digital sponsor for budget. Bring rights and brand-safety questions in early. Organisations that already buy Opta data or work with Capgemini are the warmest starting point.</p>
+
+      <div class="sub-label">Fit signals</div>
+      <div class="tag-group">
+        <span class="tag tier2">Live or high-frequency data feed</span>
+        <span class="tag tier2">Existing Opta / Stats Perform customer</span>
+        <span class="tag tier2">Existing Capgemini or Sogeti client</span>
+        <span class="tag tier2">Major season or competition ahead</span>
+        <span class="tag tier2">Fan-engagement or digital audience targets</span>
+        <span class="tag tier2">New audience to educate, such as women's sport</span>
+        <span class="tag tier2">Own match centre, app or broadcast output</span>
+        <span class="tag tier2">Multilingual audience</span>
+        <span class="tag tier2">Active generative AI programme</span>
+        <span class="tag tier2">AWS-aligned architecture</span>
+      </div>
+
+      <div class="sub-label" style="color:var(--red);">Anti-signals</div>
+      <div class="tag-group">
+        <span class="tag anti">Under 1,000 employees or $100M revenue</span>
+        <span class="tag anti">Non-English campaign markets (through year-end)</span>
+        <span class="tag anti">No live or near-real-time data</span>
+        <span class="tag anti">No rights or access to the data</span>
+        <span class="tag anti">Generic "AI strategy" with no audience or channel</span>
+        <span class="tag anti">Accounts owned by another Capgemini team · to confirm</span>
+      </div>
+
+      <div class="fast-lane" style="margin-top:22px;"><b>Pursue now</b> A live data source, an audience to grow, a named owner of the fan or viewer experience, and a season or event with a date. An existing Stats Perform or Capgemini relationship makes it warmer.</div>
+    </div>
+
+    <p class="sub-label" style="margin-top:36px; margin-bottom:12px;">Key GTM Questions</p>
+    <div class="cards" style="margin-top:0; margin-bottom:0;">
+      <div class="card accent-top">
+        <div class="card-eyebrow">Question 01</div>
+        <div class="card-title" style="font-size:16px;">What's working well now?</div>
+        <div class="card-body">Where TryZone IQ is already live, with World Rugby and Six Nations Rugby, and what made those deals happen, so we can find more organisations that look like them.</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">Question 02</div>
+        <div class="card-title" style="font-size:16px;">Where do we start?</div>
+        <div class="card-body">Which countries within your geo, and whether sport, media and events go first or cross-industry runs from day one. Are brands that sponsor sport also buyers?</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">Question 03</div>
+        <div class="card-title" style="font-size:16px;">How does the partnership sell?</div>
+        <div class="card-body">How Capgemini, Sogeti, Stats Perform and AWS split accounts and hand off, who acts on leads and how many a week, and how we stay clear of your Informa TechTarget campaign.</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">Question 04</div>
+        <div class="card-title" style="font-size:16px;">Do you leverage your joint networks today?</div>
+        <div class="card-body">Relationships that Capgemini, Sogeti and Stats Perform leaders already hold with sports bodies, broadcasters and media, and could use to open doors.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 UNDERSTANDING YOUR BUSINESS -->
+  <div class="section" id="s03">
+    <div class="section-kicker">Business Context</div>
+    <h2 class="section-title">Our Understanding of Your Business</h2>
+    <p class="section-intro">Live sport produces more data than any commentary team can use, and new fans need help to follow what is happening. TryZone IQ uses generative AI to turn live Opta data into short, plain-language insights, with analysts approving what is published. It was built by Capgemini with Stats Perform and AWS, debuted at the Women's Rugby World Cup 2025 as the first use of generative AI at any Rugby World Cup, and has since run at the Guinness Six Nations and the Quilter Nations Series.<sup>1, 2</sup></p>
+
+    <div class="stat-strip">
+      <div class="stat-cell"><div class="stat-num">1,521</div><div class="stat-label">Real-time insights generated across 32 matches at the Women's Rugby World Cup 2025<sup>1</sup></div></div>
+      <div class="stat-cell"><div class="stat-num">68% → ~90%</div><div class="stat-label">Share of match-centre insights published fully automated or lightly edited, from round one to the final<sup>1</sup></div></div>
+      <div class="stat-cell"><div class="stat-num">3 awards</div><div class="stat-label">UK Sponsorship Awards, Sport Industry Awards (AI in Sport) and Smarter Sports Awards<sup>1</sup></div></div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Lead with the fan's problem and the World Cup results, not a generic AI pitch."</p>
+      <cite>Vieu Account Intelligence · Capgemini + Stats Perform</cite>
+    </div>
+    <p class="note"><sup>1</sup> Stats Perform, <a href="https://www.statsperform.com/insights/tryzone-iq-how-opta-capgemini-transformed-the-in-game-fan-experience-at-the-womens-rugby-world-cup-2025/" target="_blank" rel="noopener"><em>TryZone IQ: How Opta &amp; Capgemini Transformed the In-Game Fan Experience at the Women's Rugby World Cup 2025</em></a>. Award names as listed there: Best Use of Technology in a Sponsorship Campaign (UK Sponsorship Awards), AI in Sport (Sport Industry Awards), Smarter Female Athlete Innovation (Smarter Sports Awards). <sup>2</sup> Capgemini client story, <a href="https://www.capgemini.com/wp-content/uploads/2026/04/World-Rugby-TryZone-IQ-client-story-case-study.pdf" target="_blank" rel="noopener"><em>With AI, World Rugby leaves nothing on the field</em></a>. <sup>3</sup> Capgemini press release, <a href="https://www.capgemini.com/gb-en/news/press-releases/capgemini-brings-real-time-ai-driven-match-insights-to-the-womens-rugby-world-cup-2025-a-first-for-world-rugby/" target="_blank" rel="noopener"><em>Capgemini brings real-time, AI-driven match insights to the Women's Rugby World Cup 2025</em></a>, 22 August 2025.</p>
+
+    <div class="cards" style="margin-bottom: 28px; margin-top: 28px;">
+      <div class="card accent-top">
+        <div class="card-eyebrow">Capgemini + Sogeti · The solution builder</div>
+        <div class="card-title">Built TryZone IQ, owns the rights-holder relationships</div>
+        <div class="card-body">Capgemini developed TryZone IQ as Principal Partner of the Women's Rugby World Cup 2025, and is also an Official Partner of the Guinness Six Nations.<sup>2, 3</sup> Its rugby record includes the men's Rugby World Cups in 2007 and 2023 and the women's in 2021.<sup>3</sup> Early design workshops ran at Capgemini's Applied Innovation Exchange in London with World Rugby and AWS, followed by a three-month build.<sup>2</sup> <strong>Sogeti, part of Capgemini</strong>, leads sales of TryZone IQ for this campaign.</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">Stats Perform · The data partner</div>
+        <div class="card-title">Opta live data, curated by experts</div>
+        <div class="card-body">Stats Perform supplies the live and historical <strong>Opta</strong> match data that TryZone IQ processes, and its data editorial team reviewed and curated the output so only the most relevant insights reached fans.<sup>1</sup> Stats Perform serves teams, leagues and federations, broadcasters and streamers, media, brands and sportsbooks.<sup>1</sup> Those relationships are likely to be among the warmest paths into this market. <em>We'd like to confirm this with you.</em></div>
+      </div>
+    </div>
+
+    <div class="offer-box">
+      <div class="offer-label">TryZone IQ · The offer</div>
+      <p style="font-size:13px; color:var(--ink-mid); line-height:1.7;">A <strong>generative AI insight platform for live data</strong>. It takes historical and live Opta match data, uses generative AI models hosted on Amazon Bedrock to draft short insights on player impact, team trends and standout performances, and passes them to analysts who <strong>review and approve</strong> them before they are published.<sup>2</sup> Approved insights flow into the live broadcast production workflow for commentators and on-screen graphics, and out to digital match centres and social channels.<sup>2</sup> It now also produces insights in French, Italian and Welsh as well as English.<sup>2</sup></p>
+
+      <div class="agents">
+        <div class="agent"><b>Opta live data</b><span>Stats Perform delivers historical and live match data in real time</span></div>
+        <div class="agent"><b>Amazon Bedrock</b><span>Hosts the generative AI models that draft each insight</span></div>
+        <div class="agent"><b>Analyst review</b><span>Experts select, refine and approve before anything goes out</span></div>
+        <div class="agent"><b>Multi-channel delivery</b><span>Broadcast graphics and commentary, match centre and social</span></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="mini-head">How it fits together</div>
+          <ul class="check-list">
+            <li><strong>Capgemini and Sogeti</strong> build, deploy and sell TryZone IQ, and lead the partnership</li>
+            <li><strong>Stats Perform</strong> provides the trusted live data and editorial expertise behind it</li>
+            <li><strong>AWS</strong> hosts the generative AI on Amazon Bedrock, and backs this campaign through BOX</li>
+          </ul>
+        </div>
+        <div>
+          <div class="mini-head">The opportunity in one sentence</div>
+          <p style="font-size:13px; color:var(--ink-mid); line-height:1.7;">TryZone IQ turns live data into insight audiences understand while the moment is still live, with experts in control. Vieu supplies the fan-engagement, content and data leaders who feel that gap, and a warm way in to each.</p>
+          <div class="mini-head" style="margin-top:16px;">Start → expand · Vieu's suggestion</div>
+          <p style="font-size:13px; color:var(--ink-mid); line-height:1.7;">Start with one competition or season, one data feed and one channel, such as the match centre, with analysts in the loop. Then add channels, languages and competitions. We'll align this with how Sogeti packages the offer.</p>
+        </div>
+      </div>
+
+      <div class="outcome-strip" aria-label="Published TryZone IQ results">
+        <div class="outcome"><div class="n">10 → 65+</div><div class="l">Insights per game, first round to end of the tournament<sup>2</sup></div></div>
+        <div class="outcome"><div class="n">147M</div><div class="l">Viewing hours where TryZone IQ insights were used<sup>2</sup></div></div>
+        <div class="outcome"><div class="n">1.18M</div><div class="l">Impressions on the dedicated digital match centre<sup>1</sup></div></div>
+        <div class="outcome"><div class="n">+29%</div><div class="l">Brand awareness uplift for Capgemini<sup>1</sup></div></div>
+      </div>
+    </div>
+
+    <div class="offer-box" style="margin-top:20px;">
+      <div class="offer-label">Beyond the World Cup · where the pattern has run since</div>
+      <div class="two-col">
+        <div>
+          <div class="mini-head">Six Nations and Quilter Nations Series</div>
+          <p style="font-size:13px; color:var(--ink-mid); line-height:1.7;">After the Women's Rugby World Cup, TryZone IQ was used at the Quilter Nations Series and the Guinness Six Nations, where Capgemini is an Official Partner.<sup>2</sup> That makes it a repeatable product across competitions, not a one-off activation.</p>
+        </div>
+        <div>
+          <div class="mini-head">Outcome IQ at the Ryder Cup</div>
+          <p style="font-size:13px; color:var(--ink-mid); line-height:1.7;">Capgemini's AI-powered Outcome IQ brought live win probabilities to Ryder Cup broadcasts and won SportBusiness's inaugural Sponsorship Works Award.<sup>4</sup> It is a separate product, but it shows the same live-data pattern working in golf.</p>
+        </div>
+      </div>
+      <p class="note">Public sources describe sport deployments only. We have not found a published TryZone IQ deployment outside sport, so cross-industry stays a hypothesis until you tell us otherwise. <sup>4</sup> SportBusiness, <a href="https://www.sportbusiness.com/news/capgemini-ryder-cup-campaign-wins-first-sponsorship-works-award/" target="_blank" rel="noopener"><em>Capgemini Ryder Cup campaign wins first Sponsorship Works Award</em></a>.</p>
+    </div>
+  </div>
+
+  <!-- 07 WHAT WE NEED -->
+  <div class="section" id="s07">
+    <div class="section-kicker">Getting Started</div>
+    <h2 class="section-title">What We Need From You</h2>
+    <p class="section-intro">Target countries and a first account list unblock the first cohort.</p>
+
+    <div class="table-wrap" style="margin-bottom:36px;">
+      <table class="data-table">
+        <thead><tr><th>What we need</th><th>From</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Target countries and first-wave industries</strong>: the countries within your geo, and whether sport, media and events go first</td><td>Capgemini + Sogeti</td><td><span class="pend">Pending.</span> Sets the market Vieu scans</td></tr>
+          <tr><td><strong>Target account list and suppression list</strong>: accounts to focus on, plus existing customers, open opportunities, accounts other teams own and accounts in your Informa TechTarget campaign</td><td>Capgemini, Sogeti + Stats Perform</td><td><span class="pend">Pending.</span> The starting input for the first cohort. If you have no list, Vieu proposes one</td></tr>
+          <tr><td><strong>Lead owners and capacity</strong>: who acts on leads and introductions, and roughly how many a week</td><td>Sogeti</td><td><span class="pend">Pending.</span> Sets the size of each cohort</td></tr>
+          <tr><td><strong>Stats Perform contact</strong> to join the engagement</td><td>Capgemini</td><td><span class="pend">Pending.</span> Their network is likely the warmest path into sport and media</td></tr>
+          <tr><td><strong>LinkedIn CSVs</strong> from introducers at Capgemini, Sogeti and Stats Perform</td><td>Each introducer</td><td><span class="pend">Pending.</span> More warm paths, and warmer ones</td></tr>
+          <tr><td><strong>Approved claims</strong>: the TryZone IQ results we can quote in outreach</td><td>Capgemini + Stats Perform</td><td><span class="pend">Pending.</span> Keeps every message accurate and on-brand</td></tr>
+          <tr><td><strong>Delivery channel</strong>: Teams, email or Excel, plus Vieu logins</td><td>Capgemini + Sogeti</td><td><span class="pend">Decide in the working session</span></td></tr>
+          <tr><td><strong>CRM integration</strong>: Salesforce or HubSpot</td><td>Capgemini / Sogeti</td><td>Optional</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mini-head" style="margin-top:36px; margin-bottom:16px;">Important Links</div>
+    <div class="links-box">
+      <div class="link-row">
+        <div class="link-name">Vieu Platform Login</div>
+        <div class="link-desc">Access your account, run searches, and activate warm paths</div>
+        <a class="btn-outline" href="https://www.vieu.com/login" target="_blank" rel="noopener">Log In &rarr;</a>
+      </div>
+      <div class="link-row">
+        <div class="link-name">TryZone IQ</div>
+        <div class="link-desc">Product page on Sogeti UK</div>
+        <a class="btn-outline" href="https://www.sogeti.uk/tryzone-iq/" target="_blank" rel="noopener">Open &rarr;</a>
+      </div>
+      <div class="link-row tall">
+        <div class="link-name" style="padding-top:2px;">Upload LinkedIn CSV</div>
+        <div>
+          <div class="link-desc" style="margin-bottom:14px;">Adding LinkedIn connections expands the warm paths Vieu can surface. Each introducer at Capgemini, Sogeti and Stats Perform can complete these steps.</div>
+          <div class="steps">
+            <div class="step"><span class="step-n">1</span><span class="step-t">Go to <strong>linkedin.com/mypreferences/d/download-my-data</strong></span></div>
+            <div class="step"><span class="step-n">2</span><span class="step-t">Select <strong>"Download larger data archive"</strong>, then click <strong>Request archive</strong></span></div>
+            <div class="step"><span class="step-n">3</span><span class="step-t">LinkedIn emails a download link within a few hours (occasionally up to 12)</span></div>
+            <div class="step"><span class="step-n">4</span><span class="step-t">Download the <strong>.zip</strong> file. The link expires after <strong>3 days</strong></span></div>
+            <div class="step"><span class="step-n">5</span><span class="step-t">Open the archive and take only <strong>Connections.csv</strong>. Don't share the full .zip, because it contains personal information</span></div>
+            <div class="step"><span class="step-n">6</span><span class="step-t">Upload <strong>Connections.csv</strong> using the link below</span></div>
+          </div>
+          <a class="btn-solid" href="https://www.vieu.com/boost-network?t=sogeti-wfrCytUH2EChQ2amhUfNK" target="_blank" rel="noopener">Upload Connections.csv &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-left">
+      <strong>Capgemini + Stats Perform GTM Strategy Brief</strong><br>
+      Prepared by Vieu · November 2026 · Confidential<br>
+      Built on 9B Executive Relationships
+    </div>
+    <div class="footer-vieu">vieu</div>
+  </div>
+
+</div>
+</body>
+</html>
